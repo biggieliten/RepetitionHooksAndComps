@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { SongType } from "../Types/SongTypes";
+// import { uuid } from 'uuidv4';
 
-export const initialClassicRockSongs: SongType[] = [
+export const initialSongs: SongType[] = [
   {
     artist: "Pink Floyd",
     title: "Breathe (In The Air)",
@@ -34,6 +35,38 @@ export const initialClassicRockSongs: SongType[] = [
     genre: "Classic Rock",
     length: "3.39",
   },
+  {
+    artist: "MF DOOM",
+    title: "Doomsday",
+    album: "Operation: Doomsday",
+    releaseYear: "1999",
+    genre: "HipHop",
+    length: "4.57",
+  },
+  {
+    artist: "Wu-Tang Clan",
+    title: "C.R.E.A.M",
+    album: "Enter The Wu-Tang",
+    releaseYear: "1993",
+    genre: "HipHop",
+    length: "4.11",
+  },
+  {
+    artist: "Outkast",
+    title: "Ms. Jackson",
+    album: "Stankonia",
+    releaseYear: "2000",
+    genre: "HipHop",
+    length: "4.30",
+  },
+  {
+    artist: "Freddie Gibbs (ft. The Alchemist)",
+    title: "1985",
+    album: "Alfredo",
+    releaseYear: "2020",
+    genre: "HipHop",
+    length: "2.32",
+  },
 ];
 
-export const ClassicRockContext = createContext([] as SongType[]);
+export const SongContext = createContext([] as SongType[]);

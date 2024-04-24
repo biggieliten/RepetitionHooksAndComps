@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 
 const MenuButtons: string[] = ["HipHop", "Classic Rock"];
@@ -9,14 +10,15 @@ const GenreMenu = () => {
         <h1 className="genreHeader">Choose your genre!</h1>
 
         {MenuButtons.map((genre) => (
-          <Button
-            Class={`.menuButton ${genre}`}
-            ButtonClick={() => {
-              `${genre}`;
-            }}
-            ButtonTitle={genre}
-            link={`/playlist/${genre}`}
-          />
+          //   <Button
+          //     Class={`menuButton ${genre}`}
+          //     ButtonClick={() => {
+          //       `${genre}`;
+          //     }}
+          //     ButtonTitle={genre}
+          //     link={`playlist/${genre}`}
+          //   <NavLink to={`playlist/${genre}`} > {genre}
+          <NavLink to={`playlist/${genre}`}>{genre}</NavLink>
         ))}
         {/* <Button
 					Class=".menuButton CR"
