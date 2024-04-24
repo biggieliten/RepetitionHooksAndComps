@@ -1,13 +1,13 @@
 import { createContext } from "react";
 import { SongType } from "../Types/SongTypes";
 
-export const intiialHipHopSongs: SongType[] = [
+export const initialHipHopSongs: SongType[] = [
   {
     artist: "MF DOOM",
     title: "Doomsday",
     album: "Operation: Doomsday",
     releaseYear: "1999",
-    genre: "Hip Hop",
+    genre: "HipHop",
     length: "4.57",
   },
   {
@@ -15,7 +15,7 @@ export const intiialHipHopSongs: SongType[] = [
     title: "C.R.E.A.M",
     album: "Enter The Wu-Tang",
     releaseYear: "1993",
-    genre: "Hip Hop",
+    genre: "HipHop",
     length: "4.11",
   },
   {
@@ -23,7 +23,7 @@ export const intiialHipHopSongs: SongType[] = [
     title: "Ms. Jackson",
     album: "Stankonia",
     releaseYear: "2000",
-    genre: "Hip Hop",
+    genre: "HipHop",
     length: "4.30",
   },
   {
@@ -31,7 +31,7 @@ export const intiialHipHopSongs: SongType[] = [
     title: "1985",
     album: "Alfredo",
     releaseYear: "2020",
-    genre: "Hip Hop",
+    genre: "HipHop",
     length: "2.32",
   },
 ];

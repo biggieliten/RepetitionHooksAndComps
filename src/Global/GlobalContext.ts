@@ -1,7 +1,7 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 import { initialClassicRockSongs } from "../ClassicRock/ClassicRockContext";
-import { intiialHipHopSongs } from "../HipHop/HipHopContext";
+import { initialHipHopSongs } from "../HipHop/HipHopContext";
 import { SongType } from "../Types/SongTypes";
 
 type GlobalContextType = {
@@ -10,9 +10,17 @@ type GlobalContextType = {
 };
 
 export const initialSongs: GlobalContextType = {
-  hiphop: intiialHipHopSongs,
+  hiphop: initialHipHopSongs,
   classicrock: initialClassicRockSongs,
 };
+// const GlobalMusic = createContext<GlobalContextType>()
 
-// console.log(initialSongs);
-export const GlobalSongs = createContext([] as GlobalContextType[]);
+// const GloblMusicProvider: React.FC = ({ children }) => {
+//   const [songs, setSongs] = useState<SongType[]>([]);
+// };
+
+// return(
+// 	<Gl
+// )
+console.log(initialSongs);
+export const GlobalMusic = createContext([] as GlobalContextType[]);

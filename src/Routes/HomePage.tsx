@@ -1,6 +1,7 @@
 import GenreMenu from "../Components/GenreMenu/GenreMenu";
+// import "../index.css";
 
-const Root = () => {
+const HomePage = () => {
   return (
     <>
       <GenreMenu />
@@ -8,4 +9,4 @@ const Root = () => {
   );
 };
 
-export default Root;
+export default HomePage;
