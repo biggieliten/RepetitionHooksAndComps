@@ -1,16 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalMusic } from "../State/GlobalContext";
 import BackButton from "../Components/BackButton/BackButton";
-
 import { Outlet, useParams } from "react-router-dom";
-import { SongType } from "../Types/SongTypes";
 import Button from "../Components/Button/Button";
+import { initialSongsGlobal } from "../State/GlobalContext";
+
 const PlayList = () => {
   const { playlistGenre } = useParams<{ playlistGenre: string }>();
-  console.log(playlistGenre, "genre");
+  //   console.log(playlistGenre, "genre");
   const { state, dispatch } = useContext(GlobalMusic);
-  //   console.log(state, "playlist");
-  //  = useContext(GlobalMusic);
+  const [albumCover, setAlbumCover] = useState(false);
 
   const allSongs = Object.values(state).flat();
   //   console.log(allSongs, "allsongs");
@@ -20,17 +19,41 @@ const PlayList = () => {
   );
   //   console.log(filteredSongs, "filtered");
 
+  const handleRemoveDispatch = (song: any) => {
+    dispatch({ type: "REMOVE_SONG", payload: song });
+  };
+
+  useEffect(() => {
+    filteredSongs.map((song: any) => {
+      if (song.albumCover) {
+        setAlbumCover(true);
+      } else {
+        setAlbumCover(false);
+      }
+    });
+  }, [filteredSongs]);
+
   return (
     <>
       <div>
         <ul>
           {filteredSongs.map((song: any) => (
             <>
+              {song.albumCover && (
+                <img
+                  className={`albumCover ${albumCover ? "visible" : " "} `}
+                  src={song.albumCover}
+                  alt=""
+                />
+              )}
               <li>
                 {song.title}
                 {song.album}
                 {song.genre}
               </li>
+              <button onClick={() => handleRemoveDispatch(song.title)}>
+                Remove
+              </button>
             </>
           ))}
         </ul>

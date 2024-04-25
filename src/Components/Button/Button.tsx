@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
 type Button = {
-  ButtonClick: React.MouseEventHandler<HTMLButtonElement>;
+  ButtonClick:
+    | React.MouseEventHandler<HTMLButtonElement>
+    | React.FormEventHandler;
   ButtonTitle: string;
   Class: string;
-  link: string;
+  link?: string;
 };
 
 const Button = ({ Class, ButtonClick, ButtonTitle, link }: Button) => {

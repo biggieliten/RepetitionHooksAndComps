@@ -4,9 +4,9 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GlobalMusic, initialSongsGlobal } from "./State/GlobalContext.ts";
 import PlayList from "./Routes/PlayList.tsx";
-import { AddForm } from "./Routes/AddForm.tsx";
 import HomePage from "./Routes/HomePage.tsx";
 import { GlobalMusicProvider } from "./State/GlobalContextProvider.tsx";
+import AddForm from "./Routes/AddForm.tsx";
 
 const router = createBrowserRouter([
   {

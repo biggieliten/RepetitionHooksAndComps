@@ -1,11 +1,21 @@
 import { initialSongsGlobal } from "./GlobalContext";
-console.log(initialSongsGlobal, "initial");
-const SongReducer = (state: any, action: any): any => {
+import { SongType, StateSongType } from "../Types/SongTypes";
+import { Action } from "../Types/ReducerTypes";
+
+const SongReducer = (state: StateSongType, action: Action) => {
   switch (action.type) {
     case "ADD_SONG":
-      return {};
+      return {
+        ...state,
+        songs: [...state.songs, action.payload],
+      };
     case "REMOVE_SONG":
-      return {};
+      return {
+        ...state,
+        songs: state.songs.filter(
+          (song: SongType) => song.title !== action.payload
+        ),
+      };
     default:
       return state;
   }

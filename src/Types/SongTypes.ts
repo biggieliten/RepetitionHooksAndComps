@@ -5,4 +5,9 @@ export type SongType = {
   releaseYear: string;
   genre: string;
   length: string;
+  albumCover: string;
+};
+
+export type StateSongType = {
+  songs: SongType[];
 };

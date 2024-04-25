@@ -17,3 +17,8 @@
   width: 7rem;
   height: 2.5rem;
 }
+
+.visible {
+  width: 100px;
+  height: 100px;
+}

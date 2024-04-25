@@ -8,11 +8,7 @@ type GlobalMusicProviderProps = {
 };
 
 export const GlobalMusicProvider = ({ children }: GlobalMusicProviderProps) => {
-  const [state, dispatch] = useReducer(SongReducer, initialSongsGlobal.songs);
-
-  //   console.log(initialSongsGlobal, "init");
-  //   console.log(state, "state");
-  //   console.log(state, "GlobalState");
+  const [state, dispatch] = useReducer(SongReducer, initialSongsGlobal);
 
   return (
     <GlobalMusic.Provider value={{ state, dispatch }}>
@@ -20,5 +16,3 @@ export const GlobalMusicProvider = ({ children }: GlobalMusicProviderProps) => {
     </GlobalMusic.Provider>
   );
 };
-
-// GlobalMusicProvider();

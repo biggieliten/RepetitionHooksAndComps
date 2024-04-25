@@ -10,6 +10,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "1973",
     genre: "Classic Rock",
     length: "2.49",
+    albumCover: "",
   },
   {
     artist: "The Rolling Stones",
@@ -18,6 +19,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "1968",
     genre: "Classic Rock",
     length: "6.18",
+    albumCover: "",
   },
   {
     artist: "The Who",
@@ -26,6 +28,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "1971",
     genre: "Classic Rock",
     length: "3.10",
+    albumCover: "",
   },
   {
     artist: "The Beach Boys",
@@ -34,6 +37,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "1967",
     genre: "Classic Rock",
     length: "3.39",
+    albumCover: "",
   },
   {
     artist: "MF DOOM",
@@ -42,6 +46,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "1999",
     genre: "HipHop",
     length: "4.57",
+    albumCover: "",
   },
   {
     artist: "Wu-Tang Clan",
@@ -50,6 +55,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "1993",
     genre: "HipHop",
     length: "4.11",
+    albumCover: "",
   },
   {
     artist: "Outkast",
@@ -58,6 +64,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "2000",
     genre: "HipHop",
     length: "4.30",
+    albumCover: "",
   },
   {
     artist: "Freddie Gibbs (ft. The Alchemist)",
@@ -66,6 +73,7 @@ export const initialSongs: SongType[] = [
     releaseYear: "2020",
     genre: "HipHop",
     length: "2.32",
+    albumCover: "",
   },
 ];
 
