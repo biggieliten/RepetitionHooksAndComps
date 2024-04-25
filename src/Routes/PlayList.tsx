@@ -3,21 +3,17 @@ import { GlobalMusic } from "../State/GlobalContext";
 import BackButton from "../Components/BackButton/BackButton";
 import { Outlet, useParams } from "react-router-dom";
 import Button from "../Components/Button/Button";
-import { initialSongsGlobal } from "../State/GlobalContext";
 
 const PlayList = () => {
   const { playlistGenre } = useParams<{ playlistGenre: string }>();
-  //   console.log(playlistGenre, "genre");
   const { state, dispatch } = useContext(GlobalMusic);
   const [albumCover, setAlbumCover] = useState(false);
 
   const allSongs = Object.values(state).flat();
-  //   console.log(allSongs, "allsongs");
 
   const filteredSongs = allSongs.filter(
     (song: any) => song.genre === playlistGenre
   );
-  //   console.log(filteredSongs, "filtered");
 
   const handleRemoveDispatch = (song: any) => {
     dispatch({ type: "REMOVE_SONG", payload: song });
@@ -35,38 +31,44 @@ const PlayList = () => {
 
   return (
     <>
-      <div>
-        <ul>
+      <div className="playlist">
+        <ul className="playlistBox">
           {filteredSongs.map((song: any) => (
             <>
-              {song.albumCover && (
-                <img
-                  className={`albumCover ${albumCover ? "visible" : " "} `}
-                  src={song.albumCover}
-                  alt=""
-                />
-              )}
-              <li>
-                {song.title}
-                {song.album}
-                {song.genre}
+              <li className="songListItem">
+                <button
+                  className="removeSongBtn"
+                  onClick={() => handleRemoveDispatch(song.title)}
+                >
+                  &times;
+                </button>
+                {song.albumCover && (
+                  <img
+                    className={`albumCover ${albumCover ? "visible" : " "} `}
+                    src={song.albumCover}
+                    alt=""
+                  />
+                )}
+                <h2>{song.title}</h2>
+                <h4>{song.artist}</h4>
+                <h4>{song.album}</h4>
+                <p>{parseFloat(song.length).toFixed(2)} Min</p>
+                <p>{song.releaseYear}</p>
+                <p>{song.genre}</p>
               </li>
-              <button onClick={() => handleRemoveDispatch(song.title)}>
-                Remove
-              </button>
             </>
           ))}
         </ul>
-      </div>
-      <BackButton title="Back" link={`/`} />
+        <BackButton title="Back" link={`/`} />
 
-      <Button
-        ButtonClick={() => {}}
-        link={"add"}
-        ButtonTitle="Add song"
-        Class="addButton"
-      />
-      <Outlet />
+        <Button
+          ButtonClick={() => {}}
+          link={"add"}
+          ButtonTitle="Add song"
+          Class="addButton"
+        />
+        <Outlet />
+      </div>
     </>
   );
 };

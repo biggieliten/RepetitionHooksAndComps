@@ -4,7 +4,9 @@ import GenreMenu from "../Components/GenreMenu/GenreMenu";
 const HomePage = () => {
   return (
     <>
-      <GenreMenu />
+      <div className="homePage">
+        <GenreMenu />
+      </div>
     </>
   );
 };

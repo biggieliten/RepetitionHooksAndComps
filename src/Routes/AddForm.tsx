@@ -7,6 +7,7 @@ import { DropDownOption } from "../Components/DropDown/DropDownOption";
 import Button from "../Components/Button/Button";
 import { GlobalMusic } from "../State/GlobalContext";
 import { Action } from "../Types/ReducerTypes";
+import { MenuButtons } from "../Components/GenreMenu/GenreMenu";
 
 const AddForm = () => {
   const { state, dispatch } = useContext(GlobalMusic);
@@ -90,8 +91,9 @@ const AddForm = () => {
 
           <DropDown onChange={handleChange} value={song.genre} name="genre">
             <DropDownOption value="Choose a genre" />
-            <DropDownOption value="HipHop" />
-            <DropDownOption value="Classic Rock" />
+            {MenuButtons.map((genre) => (
+              <DropDownOption value={genre} />
+            ))}
           </DropDown>
         </form>
         <BackButton link={`/playlist/${playlistGenre}`} title="Back" />
