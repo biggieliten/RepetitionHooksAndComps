@@ -3,16 +3,17 @@ import { GlobalMusic } from "../State/GlobalContext";
 import BackButton from "../Components/BackButton/BackButton";
 import { Outlet, useParams } from "react-router-dom";
 import Button from "../Components/Button/Button";
+import { SongType } from "../Types/SongTypes";
 
 const PlayList = () => {
   const { playlistGenre } = useParams<{ playlistGenre: string }>();
   const { state, dispatch } = useContext(GlobalMusic);
   const [albumCover, setAlbumCover] = useState(false);
 
-  const allSongs = Object.values(state).flat();
+  const allSongs = Object.values(state).flat() as SongType[];
 
-  const filteredSongs = allSongs.filter(
-    (song: any) => song.genre === playlistGenre
+  const filteredSongs: SongType[] = allSongs.filter(
+    (song) => song.genre === playlistGenre
   );
 
   const handleRemoveDispatch = (song: any) => {
@@ -20,7 +21,7 @@ const PlayList = () => {
   };
 
   useEffect(() => {
-    filteredSongs.map((song: any) => {
+    filteredSongs.map((song: SongType) => {
       if (song.albumCover) {
         setAlbumCover(true);
       } else {
@@ -33,9 +34,16 @@ const PlayList = () => {
     <>
       <div className="playlist">
         <ul className="playlistBox">
+          <h1 className="playlistBoxHeader">{filteredSongs[0].genre}</h1>
+          <BackButton
+            buttonStyle="plBackButton"
+            linkStyle="plBackLink"
+            title="➜"
+            link={`/`}
+          />
           {filteredSongs.map((song: any) => (
             <>
-              <li className="songListItem">
+              <li className="playListItem">
                 <button
                   className="removeSongBtn"
                   onClick={() => handleRemoveDispatch(song.title)}
@@ -52,16 +60,16 @@ const PlayList = () => {
                 <h2>{song.title}</h2>
                 <h4>{song.artist}</h4>
                 <h4>{song.album}</h4>
-                <p>{parseFloat(song.length).toFixed(2)} Min</p>
+                <p>{song.length} Min</p>
                 <p>{song.releaseYear}</p>
                 <p>{song.genre}</p>
               </li>
             </>
           ))}
         </ul>
-        <BackButton title="Back" link={`/`} />
 
         <Button
+          btnLinkStyle="plAddLink"
           ButtonClick={() => {}}
           link={"add"}
           ButtonTitle="Add song"

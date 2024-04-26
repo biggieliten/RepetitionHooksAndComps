@@ -7,14 +7,23 @@ type Button = {
   ButtonTitle: string;
   Class: string;
   link?: string;
+  btnLinkStyle: string;
 };
 
-const Button = ({ Class, ButtonClick, ButtonTitle, link }: Button) => {
+const Button = ({
+  Class,
+  ButtonClick,
+  ButtonTitle,
+  link,
+  btnLinkStyle,
+}: Button) => {
   return (
     <>
       <button className={Class} onClick={ButtonClick}>
         {""}
-        <Link to={`${link}/`}>{ButtonTitle}</Link>
+        <Link className={btnLinkStyle} to={`${link}/`}>
+          {ButtonTitle}
+        </Link>
       </button>
     </>
   );

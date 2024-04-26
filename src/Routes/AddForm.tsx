@@ -1,4 +1,4 @@
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import BackButton from "../Components/BackButton/BackButton";
 import Input from "../Components/Input/Input";
 import { useContext, useState } from "react";
@@ -6,7 +6,6 @@ import DropDown from "../Components/DropDown/DropDown";
 import { DropDownOption } from "../Components/DropDown/DropDownOption";
 import Button from "../Components/Button/Button";
 import { GlobalMusic } from "../State/GlobalContext";
-import { Action } from "../Types/ReducerTypes";
 import { MenuButtons } from "../Components/GenreMenu/GenreMenu";
 
 const AddForm = () => {
@@ -35,7 +34,7 @@ const AddForm = () => {
     HTMLFormElement | HTMLButtonElement
   > = (e) => {
     e.preventDefault;
-    console.log(song);
+
     dispatch({ type: "ADD_SONG", payload: song });
   };
 
@@ -43,7 +42,7 @@ const AddForm = () => {
 
   return (
     <>
-      <div>
+      <div className="addFormBox">
         <form action="">
           <h1>Add a song!</h1>
           <Input
@@ -96,8 +95,14 @@ const AddForm = () => {
             ))}
           </DropDown>
         </form>
-        <BackButton link={`/playlist/${playlistGenre}`} title="Back" />
+        <BackButton
+          buttonStyle=""
+          linkStyle=""
+          link={`/playlist/${playlistGenre}`}
+          title="Back"
+        />
         <Button
+          btnLinkStyle=""
           Class="submitButton"
           ButtonClick={handleAddDispatch}
           ButtonTitle="Submit song"

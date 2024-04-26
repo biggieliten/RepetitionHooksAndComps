@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import Button from "../Button/Button";
 
 export const MenuButtons: string[] = [
   "HipHop",
@@ -13,7 +12,7 @@ const GenreMenu = () => {
   return (
     <>
       <div className="genreMenu">
-        <h1 className="genreHeader">Choose your genre!</h1>
+        <h1 className="genreHeader">Choose your genre</h1>
 
         {MenuButtons.map((genre) => (
           <NavLink className="navLink" to={`playlist/${genre}`}>

@@ -50,7 +50,8 @@ export const initialSongs: SongType[] = [
     releaseYear: "1999",
     genre: "HipHop",
     length: "4:57",
-    albumCover: "",
+    albumCover:
+      "https://upload.wikimedia.org/wikipedia/en/0/03/MF-DOOM-Operation.jpeg",
   },
   {
     artist: "Wu-Tang Clan",
@@ -59,7 +60,8 @@ export const initialSongs: SongType[] = [
     releaseYear: "1993",
     genre: "HipHop",
     length: "4:11",
-    albumCover: "",
+    albumCover:
+      "https://upload.wikimedia.org/wikipedia/en/5/53/Wu-TangClanEntertheWu-Tangalbumcover.jpg",
   },
   {
     artist: "Outkast",
@@ -68,7 +70,8 @@ export const initialSongs: SongType[] = [
     releaseYear: "2000",
     genre: "HipHop",
     length: "4:30",
-    albumCover: "",
+    albumCover:
+      "https://upload.wikimedia.org/wikipedia/en/0/0b/OutKast_-_Stankonia.JPG",
   },
   {
     artist: "Freddie Gibbs (ft. The Alchemist)",
@@ -77,7 +80,8 @@ export const initialSongs: SongType[] = [
     releaseYear: "2020",
     genre: "HipHop",
     length: "2:32",
-    albumCover: "",
+    albumCover:
+      "https://upload.wikimedia.org/wikipedia/en/b/b3/Alfredo_by_Freddie_Gibbs_%26_The_Alchemist.jpg",
   },
   {
     artist: "Miles Davis",

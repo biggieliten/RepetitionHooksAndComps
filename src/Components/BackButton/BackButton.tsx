@@ -3,14 +3,23 @@ import { Link, Navigate } from "react-router-dom";
 type BackButtonType = {
   title: string;
   link: string;
+  linkStyle: string;
+  buttonStyle: string;
 };
 
-const BackButton = ({ title, link }: BackButtonType) => {
+const BackButton = ({
+  title,
+  link,
+  linkStyle,
+  buttonStyle,
+}: BackButtonType) => {
   return (
     <>
-      <button className="backButton">
+      <button className={buttonStyle}>
         {" "}
-        <Link to={link}>{title}</Link>
+        <Link className={linkStyle} to={link}>
+          {title}
+        </Link>
       </button>
     </>
   );
